@@ -24,7 +24,9 @@ public class OrderService {
     @Autowired
     UserRepository userRepository;
 
+
     public Order createOrder(OrderDTO orderDTO) {
+
         User user = userRepository.findById(orderDTO.getUserId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user id"));
 
@@ -42,38 +44,6 @@ public class OrderService {
 
         return  orderRepository.save(newOrder);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
